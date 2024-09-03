@@ -3,7 +3,7 @@
 @include('layouts.front.header')
 
 <body class="margin: 0px; padding: 0px;">
-    <div class="w-full container-xxl bg-white p-0" >
+    <div class="w-full container-xxl bg-white p-0" style="max-width: 1600px;width: 100%">
 
         <div class="position-relative p-0">
             @include('layouts.front.top')
