@@ -3,27 +3,47 @@
 
 @section("content")
 @php($path = 8)
-@svg($path)
-<div class="container-xxl bg-primary hero-header">
-    <div class="container px-lg-5">
+{{--@svg($path)--}}
+<div class="hero-header" style="padding: 9rem 0;margin-left: 6%;">
+    <div class="px-lg-10" style="max-height: 500px">
         <div class="row g-5 align-items-end">
-            <div class="col-lg-6 text-center text-lg-start">
-                <h1 class="text-white mb-4 animated slideInDown">The free, fun, and effective way to learn English language!</h1>
-                <p class="text-white pb-3 animated slideInDown">Learning with Laramint is fun, and research shows that it works! With quick, bite-sized lessons, you’ll earn points and unlock new levels while gaining real-world communication skills.</p>
-                <a href="" class="btn btn-secondary py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Read More</a>
-                <a href="{{ route('front.courses') }}" class="btn btn-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Courses</a>
-            </div>
-            <div class="col-lg-6 text-center text-lg-start">
-                <img class="img-fluid animated zoomIn" src="front/img/hero.png" alt="">
+            <div class="col-lg-12 text-center">
+                <div class="video-container" style="width: 100%; height: 100%; position: relative; padding-bottom: 56.25%; /* 16:9 aspect ratio */">
+                    <iframe src="https://www.youtube.com/embed/D1yp5jbLGpw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
- <!-- Department Start -->
+
+ <!--Education for Sport People slider Start -->
+
+ <div class="container-xxl py-5">
+     <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;">
+         <div class="row g-4">
+             @include('layouts.front.education-sport-front-slider')
+         </div>
+     </div>
+ </div>
+
+ <!-- Education for Sport People slider  -->
+
+<!--Trending slider Start -->
+
+<div class="container-xxl py-5">
+    <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;">
+        <div class="row g-4">
+            @include('layouts.front.trending-slider')
+        </div>
+    </div>
+</div>
+
+<!-- Trending slider  -->
+<!-- Department Start -->
  @if(count($departments) > 1)
  <div class="container-xxl py-5">
-     <div class="container py-5 px-lg-5">
+     <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;">
          <div class="row g-4">
              @forelse ($departments as $department)
                  <x-front.department :department="$department"/>

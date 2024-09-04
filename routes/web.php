@@ -45,7 +45,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FrontController::class, 'index'])->name('home');
-
+Route::get('/test', function () {
+    return view('contents.front.test');
+})->name('test');
 
 Route::group(['prefix' => 'front', 'as' => 'front.'], function () {
     Route::get('/courses', [FrontCourseController::class, 'courses'])->name('courses');
