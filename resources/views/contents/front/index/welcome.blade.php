@@ -4,23 +4,40 @@
 @section("content")
 @php($path = 8)
 {{--@svg($path)--}}
-<div class="hero-header" style="padding: 9rem 0;margin-left: 6%;">
-    <div class="px-lg-10" style="max-height: 500px">
-        <div class="row g-5 align-items-end">
-            <div class="col-lg-12 text-center">
-                <div class="video-container" style="width: 100%; height: 100%; position: relative; padding-bottom: 56.25%; /* 16:9 aspect ratio */">
-                    <iframe src="https://www.youtube.com/embed/D1yp5jbLGpw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+{{--<div class="hero-header" style="padding: 9rem 0;margin-left: 6%;margin-bottom: 0px">--}}
+{{--    <div class="px-lg-10" style="max-height: 500px">--}}
+{{--        <div class="row g-5 align-items-end">--}}
+{{--            <div class="col-lg-12 text-center">--}}
+{{--                <div class="video-container" style="width: 100%; height: 100%; position: relative; padding-bottom: 56.25%; /* 16:9 aspect ratio */">--}}
+{{--                    <iframe src="https://www.youtube.com/embed/D1yp5jbLGpw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+<!--Front Top Banner -->
+
+<div class="container-xxl py-5" style="padding-bottom: 0px!important;">
+    <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;margin-top:5px">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
         </div>
+        <div class="row g-4">
+            <div class="video-container" style="width: 100%; height: 100%; position: relative; padding-bottom: 56.25%; /* 16:9 aspect ratio */">
+                                    <iframe src="https://www.youtube.com/embed/D1yp5jbLGpw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>        </div>
     </div>
 </div>
 
+<!-- Front Top Banner End  -->
 
  <!--Education for Sport People slider Start -->
 
  <div class="container-xxl py-5">
      <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;">
+         <div class="wow fadeInUp" data-wow-delay="0.1s">
+             <p class="section-title text-secondary justify-content-center"><span></span>Our Team<span></span></p>
+             <h1 class="text-center mb-5">Our Team Members</h1>
+         </div>
          <div class="row g-4">
              @include('layouts.front.education-sport-front-slider')
          </div>
@@ -33,6 +50,10 @@
 
 <div class="container-xxl py-5">
     <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <p class="section-title text-secondary justify-content-center"><span></span>Our Team<span></span></p>
+            <h1 class="text-center mb-5">Our Team Members</h1>
+        </div>
         <div class="row g-4">
             @include('layouts.front.trending-slider')
         </div>
