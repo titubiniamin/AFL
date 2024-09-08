@@ -31,4 +31,5 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ URL::to('front/css/style.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('front/css/custom.css') }}" rel="stylesheet">
 </head>
