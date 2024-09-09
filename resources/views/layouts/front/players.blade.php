@@ -53,14 +53,11 @@
 
     /* Container for the product title */
     .product-title {
-        height: 34%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #28a745; /* same color as Free badge */
-        color: white;
         padding: 10px;
-        text-align: center;
+        background-color: #28a745;
+        color: white;
+        text-align: left;
+
     }
 
     .product-title h3 {
@@ -68,6 +65,7 @@
         font-size: 18px;
         font-weight: bold;
     }
+
     .details-button {
         position: absolute;
         bottom: 10px;
@@ -85,19 +83,46 @@
     .details-button:hover {
         background-color: #0056b3;
     }
+
+    .info-section {
+        margin: 5px 0; /* Add space between lines */
+        font-size: 14px; /* Adjust font size */
+        line-height: 1; /* Set line height for better readability */
+        display: block;
+    }
+
 </style>
 <div style="height: 400px; width: 100%; max-width: 100%; background-color: white; overflow: hidden; border: 1px red">
     <div id="carouselExampleIndicators3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="d-flex justify-content-around" style="height: 100%;">
+
                     <div class="product-card">
-{{--                        <span class="sale-badge">Sale</span>--}}
+                        <!-- Product Image -->
                         <div class="product-image">
-                            <img src="front/img/player-1.png" alt="Product Image">
-{{--                            <span class="free-badge">Free</span>--}}
+                            <img src="front/img/player-8.png" alt="Player Image">
                         </div>
-                        <div class="product-title">
+
+                        <!-- Product Details -->
+                        <div class="product-title info-section">
+                            <p><strong>Name:</strong> John Doe</p>
+                            <p><strong>Age:</strong> 34</p>
+                            <p><strong>Height:</strong> 5'8"</p>
+                            <p><strong>Position:</strong> Forward</p>
+                        </div>
+
+                        <!-- Button for Details -->
+                        <button class="details-button">Details</button>
+                    </div>
+                    <div class="product-card">
+                        {{--                        <span class="sale-badge">Sale</span>--}}
+                        <div class="product-image">
+                            <img src="front/img/player-2.png" alt="Product Image">
+                            {{--                            <span class="free-badge">Free</span>--}}
+                        </div>
+                        <!-- Product Details -->
+                        <div class="product-title info-section">
                             <p><strong>Name:</strong> John Doe</p>
                             <p><strong>Age:</strong> 34</p>
                             <p><strong>Height:</strong> 5'8"</p>
@@ -109,36 +134,38 @@
                     </div>
 
                     <div class="product-card">
-{{--                        <span class="sale-badge">Sale</span>--}}
-                        <div class="product-image">
-                            <img src="front/img/player-2.png" alt="Product Image">
-{{--                            <span class="free-badge">Free</span>--}}
-                        </div>
-                        <div class="product-title">
-                            <h3>Your Product Title</h3>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-{{--                        <span class="sale-badge">Sale</span>--}}
+                        {{--                        <span class="sale-badge">Sale</span>--}}
                         <div class="product-image">
                             <img src="front/img/player-8.png" alt="Product Image">
-{{--                            <span class="free-badge">Free</span>--}}
+                            {{--                            <span class="free-badge">Free</span>--}}
                         </div>
-                        <div class="product-title">
-                            <h3>Your Product Title</h3>
+                        <!-- Product Details -->
+                        <div class="product-title info-section">
+                            <p><strong>Name:</strong> John Doe</p>
+                            <p><strong>Age:</strong> 34</p>
+                            <p><strong>Height:</strong> 5'8"</p>
+                            <p><strong>Position:</strong> Forward</p>
                         </div>
+
+                        <!-- Button for Details -->
+                        <button class="details-button">Details</button>
                     </div>
 
                     <div class="product-card">
-{{--                        <span class="sale-badge">Sale</span>--}}
+                        {{--                        <span class="sale-badge">Sale</span>--}}
                         <div class="product-image">
                             <img src="front/img/player-4.png" alt="Product Image">
-{{--                            <span class="free-badge">Free</span>--}}
+                            {{--                            <span class="free-badge">Free</span>--}}
                         </div>
-                        <div class="product-title">
-                            <h3>Your Product Title</h3>
+                        <div class="product-title info-section">
+                            <p><strong>Name:</strong> John Doe</p>
+                            <p><strong>Age:</strong> 34</p>
+                            <p><strong>Height:</strong> 5'8"</p>
+                            <p><strong>Position:</strong> Forward</p>
                         </div>
+
+                        <!-- Button for Details -->
+                        <button class="details-button">Details</button>
                     </div>
                 </div>
             </div>
@@ -146,10 +173,10 @@
             <div class="carousel-item">
                 <div class="d-flex justify-content-around" style="height: 100%;">
                     <div class="product-card">
-{{--                        <span class="sale-badge">Sale</span>--}}
+                        {{--                        <span class="sale-badge">Sale</span>--}}
                         <div class="product-image">
                             <img src="front/img/player-5.png" alt="Product Image">
-{{--                            <span class="free-badge">Free</span>--}}
+                            {{--                            <span class="free-badge">Free</span>--}}
                         </div>
                         <div class="product-title">
                             <h3>Your Product Title</h3>
@@ -157,26 +184,37 @@
                     </div>
 
                     <div class="product-card">
-{{--                        <span class="sale-badge">Sale</span>--}}
+                        {{--                        <span class="sale-badge">Sale</span>--}}
                         <div class="product-image">
                             <img src="front/img/player-6.png" alt="Product Image">
-{{--                            <span class="free-badge">Free</span>--}}
+                            {{--                            <span class="free-badge">Free</span>--}}
                         </div>
-                        <div class="product-title">
-                            <h3>Your Product Title</h3>
+                        <div class="product-title info-section">
+                            <p><strong>Name:</strong> John Doe</p>
+                            <p><strong>Age:</strong> 34</p>
+                            <p><strong>Height:</strong> 5'8"</p>
+                            <p><strong>Position:</strong> Forward</p>
                         </div>
+
+                        <!-- Button for Details -->
+                        <button class="details-button">Details</button>
                     </div>
 
                     <div class="product-card">
-{{--                        <span class="sale-badge">Sale</span>--}}
+                        {{--                        <span class="sale-badge">Sale</span>--}}
                         <div class="product-image">
                             <img src="front/img/player-7.png" alt="Product Image">
-{{--                            <span class="free-badge">Free</span>--}}
+                            {{--                            <span class="free-badge">Free</span>--}}
                         </div>
-                        <div class="product-title">
-                            <h4>Your Product Title</h4>
+                        <div class="product-title info-section">
+                            <p><strong>Name:</strong> John Doe</p>
+                            <p><strong>Age:</strong> 34</p>
+                            <p><strong>Height:</strong> 5'8"</p>
+                            <p><strong>Position:</strong> Forward</p>
+                        </div>
 
-                        </div>
+                        <!-- Button for Details -->
+                        <button class="details-button">Details</button>
                     </div>
 
                     <div class="product-card">
@@ -195,14 +233,17 @@
 
                         <!-- Button for Details -->
                         <button class="details-button">Details</button>
-                    </div>                </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3"
+                data-bs-slide="prev">
             <span class="arrow left" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3"
+                data-bs-slide="next">
             <span class="arrow right" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>

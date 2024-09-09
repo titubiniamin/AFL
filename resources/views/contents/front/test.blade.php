@@ -1,74 +1,239 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carousel Example</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .product-card {
+        width: 280px; /* Adjust width to fit four items */
+        height: 400px;
+        position: relative;
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin: 5px;
+    }
 
-    <style>
-        .carousel-item {
-            display: flex;
-            justify-content: space-between; /* Space out items */
-            align-items: center; /* Center items vertically */
-            height: 400px; /* Fixed height for each carousel item */
-        }
-        .carousel-item > div {
-            flex: 1; /* Allow items to grow equally */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 10px; /* Add some padding */
-        }
-    </style>
-</head>
-<body>
+    /* Sale badge at the top left */
+    .sale-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        z-index: 2;
+    }
 
-<div style="height: 400px; width: 100%; background-color: #f1eded; overflow: hidden; border: 1px red;">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+    /* Container for the product image */
+    .product-image {
+        position: relative;
+        height: 66%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* The actual product image */
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Free badge at the bottom left of the image */
+    .free-badge {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background-color: #28a745; /* same color as the title background */
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        z-index: 2;
+    }
+
+    /* Container for the product title */
+    .product-title {
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        text-align: left;
+
+    }
+
+    .product-title h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .details-button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .details-button:hover {
+        background-color: #0056b3;
+    }
+    .product-title p {
+        margin: 5px 0;          /* Add space between lines */
+        font-size: 14px;         /* Adjust font size */
+        line-height: 1.5;        /* Set line height for better readability */
+        display: block;
+    }
+    /*.info-section {*/
+    /*    height: 33.33%;                   !* 1/3 of the container height for the info *!*/
+    /*    padding: 10px;                    !* Add some padding for spacing *!*/
+    /*    background-color: #f9f9f9;*/
+    /*    display: flex;*/
+    /*    flex-direction: column;           !* Stack title and info vertically *!*/
+    /*    justify-content: center;          !* Center content vertically *!*/
+    /*    text-align: center;*/
+    /*}*/
+</style>
+<div style="height: 400px; width: 100%; max-width: 100%; background-color: white; overflow: hidden; border: 1px red">
+    <div id="carouselExampleIndicators3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <div>
-                    <h3>EDUCATION FOR SPORTS PEOPLE</h3>
-                    <button class="btn btn-default" type="submit" style="margin-top: 10px; border-color: black;">Find Course</button>
-                </div>
-                <div>
-                    <h3>EDUCATION FOR MAN</h3>
-                    <button class="btn btn-default" type="submit" style="margin-top: 10px; border-color: black;">Find Course</button>
-                </div>
-                <div>
-                    <h3>EDUCATION FOR STUDENTS</h3>
-                    <button class="btn btn-default" type="submit" style="margin-top: 10px; border-color: black;">Find Course</button>
+                <div class="d-flex justify-content-around" style="height: 100%;">
+                    {{--                    <div class="product-card">--}}
+                    {{--                        <span class="sale-badge">Sale</span>--}}
+                    {{--                        <div class="product-image">--}}
+                    {{--                            <img src="front/img/player-1.png" alt="Product Image">--}}
+                    {{--                            <span class="free-badge">Free</span>--}}
+                    {{--                        </div>--}}
+                    {{--                        <div class="product-title">--}}
+                    {{--                            <h2>Title</h2>--}}
+                    {{--                            <p>Other information goes here.</p>--}}
+                    {{--                        </div>--}}
+
+                    {{--                        <!-- Button for Details -->--}}
+                    {{--                        <button class="details-button">Details</button>--}}
+                    {{--                    </div>--}}
+                    <div class="product-card">
+                        <!-- Product Image -->
+                        <div class="product-image">
+                            <img src="front/img/player-8.png" alt="Player Image">
+                        </div>
+
+                        <!-- Product Details -->
+                        <div class="product-title">
+                            <p><strong>Name:</strong> John Doe</p>
+                            <p><strong>Age:</strong> 34</p>
+                            <p><strong>Height:</strong> 5'8"</p>
+                            <p><strong>Position:</strong> Forward</p>
+                        </div>
+
+                        <!-- Button for Details -->
+                        <button class="details-button">Details</button>
+                    </div>
+                    <div class="product-card">
+                        {{--                        <span class="sale-badge">Sale</span>--}}
+                        <div class="product-image">
+                            <img src="front/img/player-2.png" alt="Product Image">
+                            {{--                            <span class="free-badge">Free</span>--}}
+                        </div>
+                        <div class="product-title">
+                            <p><strong>Name:</strong> John Doe</p>
+                            <p><strong>Age:</strong> 34</p>
+                            <p><strong>Height:</strong> 5'8"</p>
+                            <p><strong>Position:</strong> Forward</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        {{--                        <span class="sale-badge">Sale</span>--}}
+                        <div class="product-image">
+                            <img src="front/img/player-8.png" alt="Product Image">
+                            {{--                            <span class="free-badge">Free</span>--}}
+                        </div>
+                        <div class="product-title">
+                            <h3>Your Product Title</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        {{--                        <span class="sale-badge">Sale</span>--}}
+                        <div class="product-image">
+                            <img src="front/img/player-4.png" alt="Product Image">
+                            {{--                            <span class="free-badge">Free</span>--}}
+                        </div>
+                        <div class="product-title">
+                            <h3>Your Product Title</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="carousel-item">
-                <div>
-                    <h3>NEW EDUCATION FOR WOMEN</h3>
-                    <button class="btn btn-default" type="submit" style="margin-top: 10px; border-color: black;">Find Course</button>
-                </div>
-                <div>
-                    <h3>EDUCATION FOR TEENS</h3>
-                    <button class="btn btn-default" type="submit" style="margin-top: 10px; border-color: black;">Find Course</button>
-                </div>
-                <div>
-                    <h3>ONLINE EDUCATION</h3>
-                    <button class="btn btn-default" type="submit" style="margin-top: 10px; border-color: black;">Find Course</button>
-                </div>
+                <div class="d-flex justify-content-around" style="height: 100%;">
+                    <div class="product-card">
+                        {{--                        <span class="sale-badge">Sale</span>--}}
+                        <div class="product-image">
+                            <img src="front/img/player-5.png" alt="Product Image">
+                            {{--                            <span class="free-badge">Free</span>--}}
+                        </div>
+                        <div class="product-title">
+                            <h3>Your Product Title</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        {{--                        <span class="sale-badge">Sale</span>--}}
+                        <div class="product-image">
+                            <img src="front/img/player-6.png" alt="Product Image">
+                            {{--                            <span class="free-badge">Free</span>--}}
+                        </div>
+                        <div class="product-title">
+                            <h3>Your Product Title</h3>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        {{--                        <span class="sale-badge">Sale</span>--}}
+                        <div class="product-image">
+                            <img src="front/img/player-7.png" alt="Product Image">
+                            {{--                            <span class="free-badge">Free</span>--}}
+                        </div>
+                        <div class="product-title">
+                            <h4>Your Product Title</h4>
+
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <!-- Product Image -->
+                        <div class="product-image">
+                            <img src="front/img/player-8.png" alt="Player Image">
+                        </div>
+
+                        <!-- Product Details -->
+                        <div class="product-title">
+                            <p><strong>Name:</strong> John Doe</p>
+                            <p><strong>Age:</strong> 34</p>
+                            <p><strong>Height:</strong> 5'8"</p>
+                            <p><strong>Position:</strong> Forward</p>
+                        </div>
+
+                        <!-- Button for Details -->
+                        <button class="details-button">Details</button>
+                    </div>                </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+            <span class="arrow left" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+            <span class="arrow right" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

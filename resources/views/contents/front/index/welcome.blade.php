@@ -23,11 +23,8 @@
             </div>
             <div class="row g-4">
                 <div class="video-container"
-                     style="width: 100%; height: 100%; position: relative; padding-bottom: 56.25%; /* 16:9 aspect ratio */">
-                    <iframe src="https://www.youtube.com/embed/D1yp5jbLGpw"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                     style="margin-top:5%;">
+                    <video src="front/video/video-4.webm" style="width: 100%;" controls></video>
                 </div>
             </div>
         </div>

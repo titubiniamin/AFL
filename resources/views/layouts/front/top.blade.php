@@ -8,12 +8,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav mx-auto py-0">
-            <a href="{{ route('home') }}" class="nav-item nav-link " style="color:black!important">Home</a>
+            <a href="{{ route('front.courses') }}" class="nav-item nav-link" style="color:black!important">About</a>
+            <a href="" class="nav-item nav-link" style="color:black!important">Live</a>
+            <a href="" class="nav-item nav-link" style="color:black!important">Socials</a>
             <a href="{{ route('front.courses') }}" class="nav-item nav-link" style="color:black!important">Courses</a>
-            <a href="{{ route('front.plans') }}" class="nav-item nav-link" style="color:black!important">Plans</a>
+            <a href="" class="nav-item nav-link " style="color:black!important">Session</a>
+            <a href="" class="nav-item nav-link" style="color:black!important">Club Program</a>
+            <a href="" class="nav-item nav-link" style="color:black!important">Club Program</a>
+            <a href="" class="nav-item nav-link" style="color:black!important">Health</a>
 
-            <a href="" class="nav-item nav-link" style="color:black!important">About</a>
-            <a href="" class="nav-item nav-link" style="color:black!important">Contact</a>
+            <a href="" class="nav-item nav-link" style="color:black!important">Player Recruitment</a>
+            <a href="" class="nav-item nav-link" style="color:black!important">News & Blogs</a>
         </div>
         @if (Route::has('login'))
         @auth
