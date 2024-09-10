@@ -178,9 +178,15 @@
                             <img src="front/img/player-5.png" alt="Product Image">
                             {{--                            <span class="free-badge">Free</span>--}}
                         </div>
-                        <div class="product-title">
-                            <h3>Your Product Title</h3>
+                        <div class="product-title info-section">
+                            <p><strong>Name:</strong> John Doe</p>
+                            <p><strong>Age:</strong> 34</p>
+                            <p><strong>Height:</strong> 5'8"</p>
+                            <p><strong>Position:</strong> Forward</p>
                         </div>
+
+                        <!-- Button for Details -->
+                        <button class="details-button">Details</button>
                     </div>
 
                     <div class="product-card">

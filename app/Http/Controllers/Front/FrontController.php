@@ -11,7 +11,7 @@ class FrontController extends Controller
 
     /**
      * Make HomePage Index
-     * 
+     *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index(HomeServices $homeServices)
@@ -22,5 +22,5 @@ class FrontController extends Controller
         return view('contents.front.index.welcome', $homeCompactReturn);
     }
 
-    
+
 }

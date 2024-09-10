@@ -170,7 +170,7 @@ h6,
         z-index: 999;
         background-color: #6222CC;
     }
-    
+
     .sticky-top.navbar-light {
         position: fixed;
         background: #FFFFFF;
@@ -199,7 +199,7 @@ h6,
 
     .navbar-light .btn {
         color: var(--dark);
-        background: #FFFFFF;
+        background: #f6f3f3;
     }
 
     .sticky-top.navbar-light .btn {
@@ -213,7 +213,7 @@ h6,
 
 .space{
     margin-bottom: 1rem;
-    padding: 3rem 0; 
+    padding: 3rem 0;
 }
 
 .hero-header {
@@ -524,9 +524,9 @@ h6,
 .footer {
     margin-top: 6rem;
     padding-top: 9rem;
-    background:
-        url(../img/bg-top.png),
-        url(../img/map.png);
+    /*background:*/
+    /*    url(../img/bg-top.png),*/
+    /*    url(../img/map.png);*/
     background-position:
         center top,
         center center;

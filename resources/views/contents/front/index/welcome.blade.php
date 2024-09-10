@@ -1,6 +1,4 @@
 @extends('layouts.front.theme')
-
-
 @section("content")
     @php($path = 8)
     {{--@svg($path)--}}
@@ -24,7 +22,7 @@
             <div class="row g-4">
                 <div class="video-container"
                      style="margin-top:5%;">
-                    <video src="front/video/video-4.webm" style="width: 100%;" controls></video>
+                    <video src="video/video-4.webm" style="width: 100%;" controls></video>
                 </div>
             </div>
         </div>
@@ -133,8 +131,8 @@
         <div class="container py-5 px-lg-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="section-title text-secondary">laramint<span></span></p>
-                    <h1 class="mb-5">What's laramint</h1>
+                    <p class="section-title text-secondary">AFL<span></span></p>
+                    <h1 class="mb-5">What's AFL</h1>
 
                     <div class="skill mb-4">
                         <div class="d-flex justify-content-between">
@@ -214,9 +212,9 @@
     <div class="container-xxl py-5">
         <div class="container py-5 px-lg-5">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
-                <p class="section-title text-secondary justify-content-center"><span></span>Why Laramint<span></span>
+                <p class="section-title text-secondary justify-content-center"><span></span>Why AFL<span></span>
                 </p>
-                <h1 class="text-center mb-5">Why you’ll love learning with Laramint</h1>
+                <h1 class="text-center mb-5">Why you’ll love learning with AFL</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">

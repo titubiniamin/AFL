@@ -1,6 +1,4 @@
 @extends('layouts.front.theme')
-
-
 @section("content")
 <div class="space"></div>
 <!-- Terms Start -->

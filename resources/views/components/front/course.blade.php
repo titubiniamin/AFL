@@ -1,8 +1,11 @@
 <div class="col-lg-4 col-md-6 portfolio-item department-{{ $course->Department->id }} wow fadeInUp" data-wow-delay="0.1s">
     <div class="rounded overflow-hidden">
         <div class="position-relative overflow-hidden">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$course->image}}?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+{{--            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$course->image}}?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--}}
+            <div class="video-container"
+                 style="margin-top:5%;">
+                <video src="video/{{$course->image}}" style="width: 100%;" controls></video>
+            </div>
             {{--            <img class="img-fluid w-100" src="{{ URL::to('course/' . $course->image)  ?: URL::to('front/img/portfolio-1.jpg') }}" alt="">--}}
 {{--            <div class="portfolio-overlay">--}}
 {{--                <a class="btn btn-square btn-outline-light mx-1" href="{{ route('front.course' , $course->id) }}">--}}

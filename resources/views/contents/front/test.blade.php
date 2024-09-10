@@ -1,239 +1,74 @@
-<style>
-    .product-card {
-        width: 280px; /* Adjust width to fit four items */
-        height: 400px;
-        position: relative;
-        border: 1px solid #ddd;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        margin: 5px;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Language Dropdown</title>
 
-    /* Sale badge at the top left */
-    .sale-badge {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background-color: red;
-        color: white;
-        padding: 5px 10px;
-        font-size: 14px;
-        font-weight: bold;
-        z-index: 2;
-    }
+    <!-- MDBootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet">
 
-    /* Container for the product image */
-    .product-image {
-        position: relative;
-        height: 66%;
-        width: 100%;
-        overflow: hidden;
-    }
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-    /* The actual product image */
-    .product-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+    <style>
+        .flag {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
 
-    /* Free badge at the bottom left of the image */
-    .free-badge {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        background-color: #28a745; /* same color as the title background */
-        color: white;
-        padding: 5px 10px;
-        font-size: 14px;
-        font-weight: bold;
-        z-index: 2;
-    }
+        .dropdown-item .fa-check {
+            visibility: hidden;
+        }
 
-    /* Container for the product title */
-    .product-title {
-        padding: 10px;
-        background-color: #28a745;
-        color: white;
-        text-align: left;
+        .dropdown-item.active .fa-check {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
 
-    }
+<div class="dropdown">
+    <a data-mdb-dropdown-init class="dropdown-toggle" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+        <i class="flag-united-kingdom flag m-0"></i>
+    </a>
 
-    .product-title h3 {
-        margin: 0;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    .details-button {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        font-size: 12px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .details-button:hover {
-        background-color: #0056b3;
-    }
-    .product-title p {
-        margin: 5px 0;          /* Add space between lines */
-        font-size: 14px;         /* Adjust font size */
-        line-height: 1.5;        /* Set line height for better readability */
-        display: block;
-    }
-    /*.info-section {*/
-    /*    height: 33.33%;                   !* 1/3 of the container height for the info *!*/
-    /*    padding: 10px;                    !* Add some padding for spacing *!*/
-    /*    background-color: #f9f9f9;*/
-    /*    display: flex;*/
-    /*    flex-direction: column;           !* Stack title and info vertically *!*/
-    /*    justify-content: center;          !* Center content vertically *!*/
-    /*    text-align: center;*/
-    /*}*/
-</style>
-<div style="height: 400px; width: 100%; max-width: 100%; background-color: white; overflow: hidden; border: 1px red">
-    <div id="carouselExampleIndicators3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="d-flex justify-content-around" style="height: 100%;">
-                    {{--                    <div class="product-card">--}}
-                    {{--                        <span class="sale-badge">Sale</span>--}}
-                    {{--                        <div class="product-image">--}}
-                    {{--                            <img src="front/img/player-1.png" alt="Product Image">--}}
-                    {{--                            <span class="free-badge">Free</span>--}}
-                    {{--                        </div>--}}
-                    {{--                        <div class="product-title">--}}
-                    {{--                            <h2>Title</h2>--}}
-                    {{--                            <p>Other information goes here.</p>--}}
-                    {{--                        </div>--}}
-
-                    {{--                        <!-- Button for Details -->--}}
-                    {{--                        <button class="details-button">Details</button>--}}
-                    {{--                    </div>--}}
-                    <div class="product-card">
-                        <!-- Product Image -->
-                        <div class="product-image">
-                            <img src="front/img/player-8.png" alt="Player Image">
-                        </div>
-
-                        <!-- Product Details -->
-                        <div class="product-title">
-                            <p><strong>Name:</strong> John Doe</p>
-                            <p><strong>Age:</strong> 34</p>
-                            <p><strong>Height:</strong> 5'8"</p>
-                            <p><strong>Position:</strong> Forward</p>
-                        </div>
-
-                        <!-- Button for Details -->
-                        <button class="details-button">Details</button>
-                    </div>
-                    <div class="product-card">
-                        {{--                        <span class="sale-badge">Sale</span>--}}
-                        <div class="product-image">
-                            <img src="front/img/player-2.png" alt="Product Image">
-                            {{--                            <span class="free-badge">Free</span>--}}
-                        </div>
-                        <div class="product-title">
-                            <p><strong>Name:</strong> John Doe</p>
-                            <p><strong>Age:</strong> 34</p>
-                            <p><strong>Height:</strong> 5'8"</p>
-                            <p><strong>Position:</strong> Forward</p>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        {{--                        <span class="sale-badge">Sale</span>--}}
-                        <div class="product-image">
-                            <img src="front/img/player-8.png" alt="Product Image">
-                            {{--                            <span class="free-badge">Free</span>--}}
-                        </div>
-                        <div class="product-title">
-                            <h3>Your Product Title</h3>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        {{--                        <span class="sale-badge">Sale</span>--}}
-                        <div class="product-image">
-                            <img src="front/img/player-4.png" alt="Product Image">
-                            {{--                            <span class="free-badge">Free</span>--}}
-                        </div>
-                        <div class="product-title">
-                            <h3>Your Product Title</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="d-flex justify-content-around" style="height: 100%;">
-                    <div class="product-card">
-                        {{--                        <span class="sale-badge">Sale</span>--}}
-                        <div class="product-image">
-                            <img src="front/img/player-5.png" alt="Product Image">
-                            {{--                            <span class="free-badge">Free</span>--}}
-                        </div>
-                        <div class="product-title">
-                            <h3>Your Product Title</h3>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        {{--                        <span class="sale-badge">Sale</span>--}}
-                        <div class="product-image">
-                            <img src="front/img/player-6.png" alt="Product Image">
-                            {{--                            <span class="free-badge">Free</span>--}}
-                        </div>
-                        <div class="product-title">
-                            <h3>Your Product Title</h3>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        {{--                        <span class="sale-badge">Sale</span>--}}
-                        <div class="product-image">
-                            <img src="front/img/player-7.png" alt="Product Image">
-                            {{--                            <span class="free-badge">Free</span>--}}
-                        </div>
-                        <div class="product-title">
-                            <h4>Your Product Title</h4>
-
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <!-- Product Image -->
-                        <div class="product-image">
-                            <img src="front/img/player-8.png" alt="Player Image">
-                        </div>
-
-                        <!-- Product Details -->
-                        <div class="product-title">
-                            <p><strong>Name:</strong> John Doe</p>
-                            <p><strong>Age:</strong> 34</p>
-                            <p><strong>Height:</strong> 5'8"</p>
-                            <p><strong>Position:</strong> Forward</p>
-                        </div>
-
-                        <!-- Button for Details -->
-                        <button class="details-button">Details</button>
-                    </div>                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
-            <span class="arrow left" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
-            <span class="arrow right" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+    <ul class="dropdown-menu" aria-labelledby="Dropdown">
+        <li>
+            <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English <i class="fa fa-check text-success ms-2"></i></a>
+        </li>
+        <li><hr class="dropdown-divider" /></li>
+        <li>
+            <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
+        </li>
+    </ul>
 </div>
+
+<!-- MDBootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+
+</body>
+</html>
