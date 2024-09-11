@@ -1,34 +1,39 @@
 <style>
-    .search-container {
-        display: flex;
-        align-items: center;
+    .language-selector {
+        display: inline-block;
         position: relative;
     }
 
-    .search-input {
-        width: 0;
+    .flag-display {
+        font-size: 15px;
         padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        transition: width 0.3s ease;
-        opacity: 0;
-        position: absolute;
-        right: 25px;
-    }
-
-    .search-container svg {
         cursor: pointer;
-        margin-left: 10px;
-        transition: transform 0.3s ease;
+        border-radius: 4px;
+        width: 48px;
     }
 
-    .search-container.active .search-input {
-        width: 150px;
-        opacity: 1;
+    .dropdown {
+        position: absolute;
+        top: 40px; /* Adjust as needed */
+        left: 0;
+        display: block;
+        border: 1px solid #ccc;
+        padding: 5px;
+        background-color: white;
+        z-index: 100;
+        width: 100%;
     }
 
-    .search-container.active svg {
-        transform: rotate(90deg);
+    .hidden {
+        display: none;
+    }
+
+    select {
+        font-size: 16px;
+        width: 100%;
+        border: none;
+        background: none;
+        outline: none;
     }
 </style>
 
@@ -63,7 +68,17 @@
             </svg>
         </div>
 
-
+        <div class="language-selector">
+            <div id="selectedFlag" class="flag-display" onclick="toggleDropdown()">🇺🇸</div>
+            <div id="dropdownContainer" class="dropdown hidden">
+                <select id="languageDropdown" onchange="updateFlag()" style="font-size: 10px" size="4">
+                    <option value="en" data-flag="🇺🇸">🇺🇸En</option>
+                    <option value="fr" data-flag="🇫🇷">🇫🇷 Fra</option>
+                    <option value="es" data-flag="🇪🇸">🇪🇸 Spa</option>
+                    <option value="de" data-flag="🇩🇪">🇩🇪 Ger</option>
+                </select>
+            </div>
+        </div>
 
         @if (Route::has('login'))
         @auth
@@ -75,9 +90,38 @@
         @endif
     </div>
 </nav>
+
+
 <script>
     // jQuery click event to toggle the search input visibility
     $('#search-icon').on('click', function() {
         $('.search-container').toggleClass('active');
+    });
+    function toggleDropdown() {
+        var dropdownContainer = document.getElementById("dropdownContainer");
+        dropdownContainer.classList.toggle("hidden");
+    }
+
+    function updateFlag() {
+        var dropdown = document.getElementById("languageDropdown");
+        var selectedOption = dropdown.options[dropdown.selectedIndex];
+        var flag = selectedOption.getAttribute("data-flag");
+
+        // Show only the selected flag
+        var flagDisplay = document.getElementById("selectedFlag");
+        flagDisplay.innerHTML = flag;
+
+        // Hide the dropdown after selection
+        var dropdownContainer = document.getElementById("dropdownContainer");
+        dropdownContainer.classList.add("hidden");
+    }
+
+    // Optional: Hide dropdown if clicking outside
+    document.addEventListener('click', function(event) {
+        var dropdownContainer = document.getElementById("dropdownContainer");
+        var flagDisplay = document.getElementById("selectedFlag");
+        if (!flagDisplay.contains(event.target) && !dropdownContainer.contains(event.target)) {
+            dropdownContainer.classList.add("hidden");
+        }
     });
 </script>

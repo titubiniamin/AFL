@@ -3,72 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Language Dropdown</title>
-
-    <!-- MDBootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet">
-
-    <!-- Font Awesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
+    <title>Language Selector</title>
     <style>
-        .flag {
-            width: 16px;
-            height: 16px;
-            margin-right: 8px;
+        .language-selector {
+            display: inline-block;
+            position: relative;
         }
 
-        .dropdown-item .fa-check {
-            visibility: hidden;
+        .flag-display {
+            font-size: 30px;
+            padding: 5px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
 
-        .dropdown-item.active .fa-check {
-            visibility: visible;
+        .dropdown {
+            position: absolute;
+            top: 40px; /* Adjust as needed */
+            left: 0;
+            display: block;
+            border: 1px solid #ccc;
+            padding: 5px;
+            background-color: white;
+            z-index: 100;
+            width: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        select {
+            font-size: 16px;
+            width: 100%;
+            border: none;
+            background: none;
+            outline: none;
         }
     </style>
 </head>
 <body>
 
-<div class="dropdown">
-    <a data-mdb-dropdown-init class="dropdown-toggle" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-        <i class="flag-united-kingdom flag m-0"></i>
-    </a>
-
-    <ul class="dropdown-menu" aria-labelledby="Dropdown">
-        <li>
-            <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English <i class="fa fa-check text-success ms-2"></i></a>
-        </li>
-        <li><hr class="dropdown-divider" /></li>
-        <li>
-            <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
-        </li>
-        <li>
-            <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
-        </li>
-    </ul>
+<div class="language-selector">
+    <div id="selectedFlag" class="flag-display" onclick="toggleDropdown()">🇺🇸</div>
+    <div id="dropdownContainer" class="dropdown hidden">
+        <select id="languageDropdown" onchange="updateFlag()" size="4">
+            <option value="en" data-flag="🇺🇸">🇺🇸 English</option>
+            <option value="fr" data-flag="🇫🇷">🇫🇷 French</option>
+            <option value="es" data-flag="🇪🇸">🇪🇸 Spanish</option>
+            <option value="de" data-flag="🇩🇪">🇩🇪 German</option>
+        </select>
+    </div>
 </div>
 
-<!-- MDBootstrap JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+<script>
+    function toggleDropdown() {
+        var dropdownContainer = document.getElementById("dropdownContainer");
+        dropdownContainer.classList.toggle("hidden");
+    }
+
+    function updateFlag() {
+        var dropdown = document.getElementById("languageDropdown");
+        var selectedOption = dropdown.options[dropdown.selectedIndex];
+        var flag = selectedOption.getAttribute("data-flag");
+
+        // Show only the selected flag
+        var flagDisplay = document.getElementById("selectedFlag");
+        flagDisplay.innerHTML = flag;
+
+        // Hide the dropdown after selection
+        var dropdownContainer = document.getElementById("dropdownContainer");
+        dropdownContainer.classList.add("hidden");
+    }
+
+    // Optional: Hide dropdown if clicking outside
+    document.addEventListener('click', function(event) {
+        var dropdownContainer = document.getElementById("dropdownContainer");
+        var flagDisplay = document.getElementById("selectedFlag");
+        if (!flagDisplay.contains(event.target) && !dropdownContainer.contains(event.target)) {
+            dropdownContainer.classList.add("hidden");
+        }
+    });
+</script>
 
 </body>
 </html>
