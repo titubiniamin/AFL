@@ -70,7 +70,7 @@
     }
 </style>
 <div style="height: 400px; width: 100%; max-width: 100%; background-color: white; overflow: hidden; border: 1px red">
-    <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+    <div id="carouselExampleIndicatorsF" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="d-flex justify-content-around" style="height: 100%;">
@@ -168,11 +168,11 @@
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsF" data-bs-slide="prev">
             <span class="arrow left" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsF" data-bs-slide="next">
             <span class="arrow right" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>

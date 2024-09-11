@@ -1,19 +1,6 @@
 @extends('layouts.front.theme')
 @section("content")
     @php($path = 8)
-    {{--@svg($path)--}}
-    {{--<div class="hero-header" style="padding: 9rem 0;margin-left: 6%;margin-bottom: 0px">--}}
-    {{--    <div class="px-lg-10" style="max-height: 500px">--}}
-    {{--        <div class="row g-5 align-items-end">--}}
-    {{--            <div class="col-lg-12 text-center">--}}
-    {{--                <div class="video-container" style="width: 100%; height: 100%; position: relative; padding-bottom: 56.25%; /* 16:9 aspect ratio */">--}}
-    {{--                    <iframe src="https://www.youtube.com/embed/D1yp5jbLGpw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--}}
-    {{--                </div>--}}
-    {{--            </div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
-    {{--</div>--}}
-    <!--Front Top Banner -->
 
     <div class="container-xxl py-5" style="padding-bottom: 0px!important;">
         <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;margin-top:5px">
@@ -32,7 +19,7 @@
 
     <!--Education for Sport People slider Start -->
     <div class="container-xxl py-5">
-        <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;padding-top: 1rem!important;">
+        <div class="container py-5 px-lg-5 slider-div">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary justify-content-center headline-title">
                     <span></span>Education<span></span>
@@ -49,7 +36,7 @@
     <!--Trending slider Start -->
 
     <div class="container-xxl py-5">
-        <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;padding-top: 1rem!important;">
+        <div class="container py-5 px-lg-5 slider-div">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary justify-content-center headline-title">
                     <span></span>Trending<span></span>
@@ -65,7 +52,7 @@
     <!--Featured slider Start -->
 
     <div class="container-xxl py-5">
-        <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;padding-top: 1rem!important;">
+        <div class="container py-5 px-lg-5 slider-div">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary justify-content-center headline-title">
                     <span></span>Featured<span></span>
@@ -81,14 +68,14 @@
     <!--Recommended slider Start -->
 
     <div class="container-xxl py-5">
-        <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;padding-top: 1rem!important;">
+        <div class="container py-5 px-lg-5 slider-div">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary justify-content-center headline-title">
                     <span></span>Recommended<span></span>
                 </p>
             </div>
             <div class="row g-4">
-                @include('layouts.front.featured')
+                @include('layouts.front.recommended')
             </div>
         </div>
     </div>
@@ -97,7 +84,7 @@
     <!--Player Start -->
 
     <div class="container-xxl py-5">
-        <div class="container py-5 px-lg-5" style="padding-right: 0rem!important;padding-top: 1rem!important;">
+        <div class="container py-5 px-lg-5 slider-div">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary justify-content-center headline-title">
                     <span></span>Players<span></span>

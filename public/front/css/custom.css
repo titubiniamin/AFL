@@ -213,3 +213,8 @@
     transform: rotate(90deg);
 }
 
+.slider-div{
+   padding-right: 0rem!important;
+    padding-top: 1rem!important;
+}
+
